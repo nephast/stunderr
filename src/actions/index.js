@@ -11,10 +11,3 @@ export function noLove(artist) {
     payload: artist
   }
 }
-
-export function dragArtist(artist) {
-  return {
-    type: 'DRAG_ARTIST',
-    payload: artist
-  }
-}

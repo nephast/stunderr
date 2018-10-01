@@ -12,4 +12,14 @@
   background: red;
 }
 
+.deck {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  position: absolute;
+  /* opacity: 0.5; */
+}
+
 

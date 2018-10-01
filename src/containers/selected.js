@@ -11,8 +11,6 @@ class Selected extends Component {
 
   onDrop(event, cat) {
     let artist = event.dataTransfer.getData('artist');
-    // console.log('EVENT  ONDROP =-=-=-=-=-=-=-=- IS:',artist)
-    // console.log('ARTIST IS: ', artist)
     this.props.selectArtist(artist)
   }
 

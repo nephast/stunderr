@@ -14,16 +14,14 @@ const originalList =
 export default function (state = originalList, action) {
   switch (action.type) {
     case "ARTIST_SELECTED":
-      // let newstate = state.slice();
       let newState = { ...state }
-      // console.log('NEW STATE IS: +++', newState, 'PAYLOOOOAD', action.payload.name)
-      // newState.artists[0].love = true;
       let lovedArtist = newState.artists.shift();
-      newState.loved.push(lovedArtist)
+      newState.loved.push(lovedArtist);
       return newState;
-    case "DRAG_ARTIST":
-      let draggedState = { ...state }
-      draggedState.artists[0].dragged = true;  
+    case 'NO_LOVE':
+      let NoLoveState = { ...state };
+      NoLoveState.artists.shift();
+      return NoLoveState;
     default:
     return state;
   }

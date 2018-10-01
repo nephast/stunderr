@@ -2,34 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 
-import { selectArtist, dragArtist } from '../actions';
+import { selectArtist } from '../actions';
 
 class Deck extends Component {
   onDragStart(event, artist) {
-    this.props.dragArtist(artist)
-    // console.log('DRAG START ARTIST: ', artist)
     event.dataTransfer.setData('artist', artist);
-    // console.log('ARTIST EVENT IS: ', event.target.name)
   }
 
   renderList() {
-    let newArtists = this.props.artistsList.artists.filter(artist => artist.love === undefined);
-    console.log('ARTIST ARRAY: ', newArtists)
-    return newArtists.map(artist => (
+    return this.props.artistsList.artists.map(artist => (
       <img 
+        className='deck'
         name={artist.name}
         draggable="true"
         alt={artist.name}
         key={artist.name} 
         src={artist.pic} 
         onDragStart={(event) => this.onDragStart(event, artist)}
-        // onClick={() => this.props.selectArtist(artist)}
       />
-      ));
+      )).reverse();
   }
   render() {
     return (
-      <div className="deck">
+      <div>
         {this.renderList()}
       </div>
     );
@@ -43,7 +38,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectArtist: selectArtist, dragArtist: dragArtist }, dispatch);
+  return bindActionCreators({ selectArtist: selectArtist }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Deck);
