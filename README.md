@@ -1,3 +1,24 @@
+# Welcome to Stunderr!
+
+## Please swipe right if your like the artist, left if you don't... easy.
+
+State management is done with Redux.
+Drag and drop is done using HTML 5 draggable, no library used.
+
+### TODO LIST:
+
+- Styling!!! (very basic CSS/Flexbox used so far)
+- Better drag and drop capabilities (artist card should fade when nearly released, next card should show up etc...)
+- Use app state to show info about artist and statistics about user swiping.
+- connext to API to receive live data about artists.
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
