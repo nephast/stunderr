@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
 
-import Card from '../components/Card';
+import { selectArtist } from '../actions';
 
 class Deck extends Component {
   renderList() {
     return this.props.artists.map(artist => (
-      <Card key={artist.name} src={artist.pic} />
+      <img 
+        key={artist.name} 
+        src={artist.pic} 
+        onClick={() => this.props.selectArtist(artist)}
+      />
       )).reverse();
   }
   render() {
@@ -24,4 +29,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Deck);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectArtist }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Deck);
