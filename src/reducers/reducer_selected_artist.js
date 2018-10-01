@@ -3,7 +3,8 @@ export default function(state = [], action) {
     case "ARTIST_SELECTED":
       let selectedArtist= action.payload.name;
       let newState = [...state, { name: selectedArtist }]
-      return newState;
+      console.log('NEW STATE', newState)
+      return newState; 
     default:
       return state;
   }

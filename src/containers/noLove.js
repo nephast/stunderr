@@ -2,26 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 
-import { selectArtist } from '../actions';
+import { noLove } from '../actions';
 
-class Selected extends Component {
+class NoLove extends Component {
   onDragOver(event) {
     event.preventDefault();
   }
 
-  onDrop(event, cat) {
+  onDrop(event) {
     let artist = event.dataTransfer.getData('artist');
-    // console.log('EVENT  ONDROP =-=-=-=-=-=-=-=- IS:',artist)
-    // console.log('ARTIST IS: ', artist)
-    this.props.selectArtist(artist)
+    this.props.noLove(artist)
   }
 
   render() {
     return (
       <div  
-        className="selected"
+        className="no-love"
         onDragOver={(event) => this.onDragOver(event)}
-        onDrop={(event) => this.onDrop(event, 'selected')}
+        onDrop={(event => this.onDrop(event))}
       >
         HERE
       </div>
@@ -36,7 +34,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectArtist: selectArtist }, dispatch);
+  return bindActionCreators({ noLove: noLove }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Selected);
+export default connect(mapStateToProps, mapDispatchToProps)(NoLove);

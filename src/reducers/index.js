@@ -4,7 +4,7 @@ import SelectedArtist from "./reducer_selected_artist";
 
 const rootReducer = combineReducers({
   allArtists: AllArtists,
-  selectedArtist: SelectedArtist
+  // selectedArtist: SelectedArtist
 });
 
 export default rootReducer;

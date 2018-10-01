@@ -1,9 +1,15 @@
 .App {
   display: flex;
+  flex-grow: 3;
+  justify-content: space-evenly;
 }
 
 .selected {
   background: blue;
+}
+
+.no-love {
+  background: red;
 }
 
 
