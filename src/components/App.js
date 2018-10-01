@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
        <NoLove />
-       <Deck/>
+       <Deck />
        <Selected />
       </div>
     );

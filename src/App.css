@@ -1,25 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+
+
 .App {
   display: flex;
-  flex-grow: 3;
-  justify-content: space-evenly;
+  background: #F2EEED;
+  height: 800px;
 }
 
 .selected {
-  background: blue;
+  display: flex;
+  flex-grow: 2;
+  font-family: "Lato";
+  font-size: 40px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.selected-text {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .no-love {
-  background: red;
+  display: flex;
+  flex-grow: 2;
+  font-family: "Lato";
+  font-size: 40px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.no-love-text {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.deck-container {
+  font-family: "Lato";
+  font-size: 40px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
 }
 
 .deck {
   display: flex;
-  flex-direction: column;
+  border-radius: 20px;
   width: 250px;
   height: 300px;
-  border-radius: 20px;
   position: absolute;
-  /* opacity: 0.5; */
+  flex-grow: 1;
 }
 
 

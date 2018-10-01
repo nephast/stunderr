@@ -5,13 +5,17 @@ import { bindActionCreators } from "redux";
 import { noLove } from '../actions';
 
 class NoLove extends Component {
+  constructor() {
+    super()
+    this.noLoveText = 'No thanks';
+  }
   onDragOver(event) {
     event.preventDefault();
   }
 
   onDrop(event) {
     let artist = event.dataTransfer.getData('artist');
-    this.props.noLove(artist)
+    this.props.noLove(artist);
   }
 
   render() {
@@ -21,7 +25,9 @@ class NoLove extends Component {
         onDragOver={(event) => this.onDragOver(event)}
         onDrop={(event => this.onDrop(event))}
       >
-        HERE
+        <div className="no-love-text">
+        {this.noLoveText}
+        </div>
       </div>
     )
   }

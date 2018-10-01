@@ -5,11 +5,15 @@ import { bindActionCreators } from "redux";
 import { selectArtist } from '../actions';
 
 class Selected extends Component {
+  constructor() {
+    super()
+    this.selectedText = 'Yes!';
+  }
   onDragOver(event) {
     event.preventDefault();
   }
 
-  onDrop(event, cat) {
+  onDrop(event) {
     let artist = event.dataTransfer.getData('artist');
     this.props.selectArtist(artist)
   }
@@ -19,9 +23,11 @@ class Selected extends Component {
       <div  
         className="selected"
         onDragOver={(event) => this.onDragOver(event)}
-        onDrop={(event) => this.onDrop(event, 'selected')}
+        onDrop={(event) => this.onDrop(event)}
       >
-        HERE
+        <div className="selected-text">
+        {this.selectedText}
+        </div>
       </div>
     )
   }
