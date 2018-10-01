@@ -8,6 +8,7 @@ class Deck extends Component {
   renderList() {
     return this.props.artists.map(artist => (
       <img 
+        alt={artist.name}
         key={artist.name} 
         src={artist.pic} 
         onClick={() => this.props.selectArtist(artist)}
@@ -30,7 +31,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectArtist }, dispatch);
+  return bindActionCreators({ selectArtist: selectArtist }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Deck);
