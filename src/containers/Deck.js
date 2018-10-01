@@ -5,13 +5,19 @@ import { bindActionCreators } from "redux";
 import { selectArtist } from '../actions';
 
 class Deck extends Component {
+  onDragStart(event, artist) {
+    event.dataTransfer.setData('artist', artist)
+  }
+
   renderList() {
     return this.props.artists.map(artist => (
       <img 
+        draggable="true"
         alt={artist.name}
         key={artist.name} 
         src={artist.pic} 
-        onClick={() => this.props.selectArtist(artist)}
+        onDragStart={(event) => this.onDragStart(event, artist)}
+        // onClick={() => this.props.selectArtist(artist)}
       />
       )).reverse();
   }
